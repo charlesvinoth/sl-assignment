@@ -6,60 +6,66 @@ settings:
 
 dependencies:
   core-js:
-    specifier: ^3.8.3
+    specifier: ^3.36.1
     version: 3.36.1
   vue:
-    specifier: ^3.2.13
+    specifier: ^3.4.21
     version: 3.4.21
   vue-router:
-    specifier: ^4.0.3
+    specifier: ^4.3.0
     version: 4.3.0(vue@3.4.21)
   vuex:
-    specifier: ^4.0.0
+    specifier: ^4.1.0
     version: 4.1.0(vue@3.4.21)
 
 devDependencies:
   '@babel/core':
-    specifier: ^7.12.16
+    specifier: ^7.24.3
     version: 7.24.3
   '@babel/eslint-parser':
-    specifier: ^7.12.16
+    specifier: ^7.24.1
     version: 7.24.1(@babel/core@7.24.3)(eslint@7.32.0)
   '@vue/cli-plugin-babel':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)(core-js@3.36.1)(vue@3.4.21)
   '@vue/cli-plugin-eslint':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)(eslint@7.32.0)
   '@vue/cli-plugin-router':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)
   '@vue/cli-plugin-vuex':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)
   '@vue/cli-service':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(prettier@2.8.8)(sass-loader@12.6.0)(vue@3.4.21)
   eslint:
     specifier: ^7.32.0
     version: 7.32.0
   eslint-config-prettier:
-    specifier: ^8.3.0
+    specifier: ^8.10.0
     version: 8.10.0(eslint@7.32.0)
   eslint-plugin-prettier:
-    specifier: ^4.0.0
+    specifier: ^4.2.1
     version: 4.2.1(eslint-config-prettier@8.10.0)(eslint@7.32.0)(prettier@2.8.8)
+  eslint-plugin-simple-import-sort:
+    specifier: ^12.0.0
+    version: 12.0.0(eslint@7.32.0)
   eslint-plugin-vue:
-    specifier: ^8.0.3
+    specifier: ^8.7.1
     version: 8.7.1(eslint@7.32.0)
+  npm-run-all2:
+    specifier: ^6.1.2
+    version: 6.1.2
   prettier:
-    specifier: ^2.4.1
+    specifier: ^2.8.8
     version: 2.8.8
   sass:
-    specifier: ^1.32.7
+    specifier: ^1.72.0
     version: 1.72.0
   sass-loader:
-    specifier: ^12.0.0
+    specifier: ^12.6.0
     version: 12.6.0(sass@1.72.0)(webpack@5.91.0)
 
 packages:
@@ -2466,6 +2472,11 @@ packages:
       color-convert: 2.0.1
     dev: true
 
+  /ansi-styles@6.2.1:
+    resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
+    engines: {node: '>=12'}
+    dev: true
+
   /any-promise@1.3.0:
     resolution: {integrity: sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==}
     dev: true
@@ -2655,6 +2666,12 @@ packages:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
+    dev: true
+
+  /brace-expansion@2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+    dependencies:
+      balanced-match: 1.0.2
     dev: true
 
   /braces@3.0.2:
@@ -3668,6 +3685,14 @@ packages:
       eslint-config-prettier: 8.10.0(eslint@7.32.0)
       prettier: 2.8.8
       prettier-linter-helpers: 1.0.0
+    dev: true
+
+  /eslint-plugin-simple-import-sort@12.0.0(eslint@7.32.0):
+    resolution: {integrity: sha512-8o0dVEdAkYap0Cn5kNeklaKcT1nUsa3LITWEuFk3nJifOoD+5JQGoyDUW2W/iPWwBsNBJpyJS9y4je/BgxLcyQ==}
+    peerDependencies:
+      eslint: '>=5.0.0'
+    dependencies:
+      eslint: 7.32.0
     dev: true
 
   /eslint-plugin-vue@8.7.1(eslint@7.32.0):
@@ -4690,6 +4715,11 @@ packages:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
     dev: true
 
+  /json-parse-even-better-errors@3.0.1:
+    resolution: {integrity: sha512-aatBvbL26wVUCLmbWdCpeu9iF5wOyWpagiKkInA+kfws3sWdBrTnsvN2CKcyCYyUrc7rebNBlK6+kteg7ksecg==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dev: true
+
   /json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
     dev: true
@@ -4907,6 +4937,11 @@ packages:
       fs-monkey: 1.0.5
     dev: true
 
+  /memorystream@0.3.1:
+    resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
+    engines: {node: '>= 0.10.0'}
+    dev: true
+
   /merge-descriptors@1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
     dev: true
@@ -4986,6 +5021,13 @@ packages:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
+    dev: true
+
+  /minimatch@9.0.3:
+    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      brace-expansion: 2.0.1
     dev: true
 
   /minimist@1.2.8:
@@ -5120,6 +5162,25 @@ packages:
   /normalize-url@6.1.0:
     resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
     engines: {node: '>=10'}
+    dev: true
+
+  /npm-normalize-package-bin@3.0.1:
+    resolution: {integrity: sha512-dMxCf+zZ+3zeQZXKxmyuCKlIDPGuv8EF940xbkC4kQVDTtqoh6rJFO+JTKSA6/Rwi0getWmtuy4Itup0AMcaDQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dev: true
+
+  /npm-run-all2@6.1.2:
+    resolution: {integrity: sha512-WwwnS8Ft+RpXve6T2EIEVpFLSqN+ORHRvgNk3H9N62SZXjmzKoRhMFg3I17TK3oMaAEr+XFbRirWS2Fn3BCPSg==}
+    engines: {node: ^14.18.0 || >=16.0.0, npm: '>= 8'}
+    hasBin: true
+    dependencies:
+      ansi-styles: 6.2.1
+      cross-spawn: 7.0.3
+      memorystream: 0.3.1
+      minimatch: 9.0.3
+      pidtree: 0.6.0
+      read-package-json-fast: 3.0.2
+      shell-quote: 1.8.1
     dev: true
 
   /npm-run-path@2.0.2:
@@ -5368,6 +5429,12 @@ packages:
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+    dev: true
+
+  /pidtree@0.6.0:
+    resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
+    engines: {node: '>=0.10'}
+    hasBin: true
     dev: true
 
   /pkg-dir@4.2.0:
@@ -5854,6 +5921,14 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    dev: true
+
+  /read-package-json-fast@3.0.2:
+    resolution: {integrity: sha512-0J+Msgym3vrLOUB3hzQCuZHII0xkNGCtz/HJH9xZshwv9DbDwkw1KaE3gx/e2J5rpEY5rtOy6cyhKOPrkP7FZw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dependencies:
+      json-parse-even-better-errors: 3.0.1
+      npm-normalize-package-bin: 3.0.1
     dev: true
 
   /read-pkg-up@7.0.1:
