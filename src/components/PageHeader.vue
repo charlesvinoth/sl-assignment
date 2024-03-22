@@ -12,9 +12,7 @@ defineProps({
 <template>
   <header :class="{ dense: isDense }">
     <Logo />
-    <div>
-      <slot />
-    </div>
+    <slot />
   </header>
 </template>
 

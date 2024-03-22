@@ -2,8 +2,8 @@
 import { computed, onMounted, reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+import Button from '@/components/Button.vue'
 import PageHeader from '@/components/PageHeader.vue'
-import Button from './components/Button.vue'
 import InputPassword from './components/InputPassword.vue'
 import InputText from './components/InputText.vue'
 
@@ -20,7 +20,7 @@ const isAuthenticated = computed(() => store.getters.isAuthenticated)
 
 watch(isAuthenticated, () => {
   if (isAuthenticated.value) {
-    router.push({ name: 'emailCampaigns' })
+    router.push({ name: 'allLeads' })
   }
 })
 
@@ -43,7 +43,7 @@ function handleSubmit(e) {
       <form class="form" @submit="handleSubmit">
         <InputText v-model="state.email" label="Email" />
         <InputPassword v-model="state.password" label="Password" class="field" />
-        <Button :is-disabled="isButtonDisabled" />
+        <Button :is-disabled="isButtonDisabled">Sign In</Button>
       </form>
     </div>
   </main>

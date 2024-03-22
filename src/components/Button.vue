@@ -8,7 +8,9 @@ defineProps({
 </script>
 
 <template>
-  <button type="submit" :class="{ disabled: isDisabled }">Sign In</button>
+  <button type="submit" :class="{ disabled: isDisabled }">
+    <slot />
+  </button>
 </template>
 
 <style lang="scss" scoped>
