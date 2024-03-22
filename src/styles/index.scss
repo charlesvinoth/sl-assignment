@@ -21,6 +21,10 @@ body {
   margin: 0;
 }
 
+* {
+  font-family: inherit;
+}
+
 *,
 :after,
 :before {
@@ -39,5 +43,6 @@ fieldset {
     outline: none;
     color: var(--gray-1);
     font-size: 15px;
+    background-color: transparent;
   }
 }

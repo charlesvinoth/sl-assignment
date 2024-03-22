@@ -21,10 +21,10 @@ const isVisible = ref(false)
 
 <template>
   <fieldset>
-    <div class="label-container">
-      <InputLabel :label="label" />
+    <InputLabel :label="label">
       <p class="forgot-password">Forgot Password?</p>
-    </div>
+    </InputLabel>
+
     <InputWrapper>
       <input
         :name="label"
@@ -38,23 +38,17 @@ const isVisible = ref(false)
 </template>
 
 <style lang="scss" scoped>
-.label-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .forgot-password {
-    margin: 0px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--primary-1);
-  }
+.forgot-password {
+  margin: 0px;
+  color: var(--primary-1);
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .toggle {
-  font-size: 14px;
-  color: var(--gray-3);
   cursor: pointer;
+  color: var(--gray-3);
+  font-size: 14px;
   user-select: none;
 }
 </style>

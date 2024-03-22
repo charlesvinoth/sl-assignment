@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import store from '@/store'
 
 const routes = [
   {
@@ -22,7 +23,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  const isAuthenticated = false
+  const isAuthenticated = store.getters.isAuthenticated
 
   if (!isAuthenticated && to.name !== 'login') {
     return { name: 'login' }

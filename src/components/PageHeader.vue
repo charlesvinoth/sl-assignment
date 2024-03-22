@@ -20,10 +20,10 @@ defineProps({
 
 <style lang="scss" scoped>
 header {
-  background-color: #00056a;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background-color: #00056a;
   padding: 0rem 1rem;
   height: 80px;
 

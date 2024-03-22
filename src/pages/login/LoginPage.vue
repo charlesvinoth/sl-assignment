@@ -1,29 +1,48 @@
 <script setup>
-import { computed, reactive } from 'vue'
+import { computed, onMounted, reactive, watch } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import PageHeader from '@/components/PageHeader.vue'
 import Button from './components/Button.vue'
 import InputPassword from './components/InputPassword.vue'
 import InputText from './components/InputText.vue'
 
+const store = useStore()
+const router = useRouter()
+
 const state = reactive({
-  email: '',
-  password: ''
+  email: 'charles.vinoth@example.com',
+  password: 'smart@123'
 })
 
 const isButtonDisabled = computed(() => !state.email || !state.password)
+const isAuthenticated = computed(() => store.getters.isAuthenticated)
+
+watch(isAuthenticated, () => {
+  if (isAuthenticated.value) {
+    router.push({ name: 'emailCampaigns' })
+  }
+})
+
+onMounted(() => store.dispatch('logout'))
+
+function handleSubmit(e) {
+  e.preventDefault()
+  store.dispatch('login', { email: state.email, password: state.password })
+}
 </script>
 
 <template>
   <main>
     <PageHeader />
 
-    <div class="form-card">
-      <h1>Welcome to Smartlead.ai</h1>
-      <p>Log in to your account</p>
+    <div class="form-wrapper">
+      <h1 class="form-title">Welcome to Smartlead.ai</h1>
+      <p class="form-subtitle">Log in to your account</p>
 
-      <form>
+      <form class="form" @submit="handleSubmit">
         <InputText v-model="state.email" label="Email" />
-        <InputPassword v-model="state.password" label="Password" class="space" />
+        <InputPassword v-model="state.password" label="Password" class="field" />
         <Button :is-disabled="isButtonDisabled" />
       </form>
     </div>
@@ -31,37 +50,37 @@ const isButtonDisabled = computed(() => !state.email || !state.password)
 </template>
 
 <style lang="scss" scoped>
-.form-card {
-  background-color: white;
-  border-radius: 4px;
-  padding: 60px;
+.form-wrapper {
   margin: 64px auto 0px;
-  width: 540px;
-  color: var(--gray-1);
   box-shadow: 0px 2px 4px 0px rgba(141, 143, 169, 0.25);
+  border-radius: 4px;
+  background-color: white;
+  padding: 60px;
+  width: 545px;
+  color: var(--gray-1);
 
-  h1,
-  p {
+  .form-title,
+  .form-subtitle {
     text-align: center;
   }
 
-  h1 {
+  .form-title {
+    margin: 0px 0px 8px 0px;
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;
-    margin: 0px 0px 8px 0px;
   }
 
-  p {
+  .form-subtitle {
+    margin: 0px;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    margin: 0px;
   }
 
-  form {
+  .form {
     margin-top: 16px;
 
-    .space {
+    .field {
       margin-top: 16px;
       margin-bottom: 24px;
     }

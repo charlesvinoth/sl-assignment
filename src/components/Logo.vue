@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .logo {
-  height: 30px;
   width: auto;
+  height: 30px;
 }
 </style>
