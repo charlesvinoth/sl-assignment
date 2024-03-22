@@ -56,18 +56,14 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
       </ul>
     </nav>
 
-    <div>
-      <hr class="divider" />
-
-      <nav>
-        <ul>
-          <li v-for="link in links" :key="link.label" @click="openLink">
-            <img :src="link.icon" :alt="link.label" />
-            {{ link.label }}
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="links">
+      <ul>
+        <li v-for="link in links" :key="link.label" @click="openLink">
+          <img :src="link.icon" :alt="link.label" />
+          {{ link.label }}
+        </li>
+      </ul>
+    </nav>
   </aside>
 </template>
 
@@ -81,7 +77,7 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
   justify-content: space-between;
   border-right: 1px solid #e1e2ef;
   background-color: white;
-  padding: 10px 0px;
+  padding: 10px 4px 10px 0;
   width: 230px;
   height: calc(100vh - 50px);
 
@@ -141,13 +137,20 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
     }
   }
 
-  .divider {
-    margin: 0 auto 24px;
-    border: none;
-    background-color: #e1e3ef;
-    padding: 0;
-    width: 50px;
-    height: 2px;
+  .links {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -24px;
+      left: calc(50% - 25px);
+      border: none;
+      background-color: #e1e3ef;
+      padding: 0;
+      width: 50px;
+      height: 2px;
+      content: '';
+    }
   }
 }
 </style>
