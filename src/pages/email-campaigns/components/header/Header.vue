@@ -1,6 +1,15 @@
 <script setup>
 import Button from '@/components/Button.vue'
 import SearchInput from './SearchInput.vue'
+
+defineProps({
+  modelValue: {
+    type: String,
+    required: true
+  }
+})
+
+const emit = defineEmits(['update:modelValue'])
 </script>
 
 <template>
@@ -8,7 +17,10 @@ import SearchInput from './SearchInput.vue'
     <div class="tab">All Campaigns (24)</div>
 
     <div class="wrapper">
-      <SearchInput />
+      <SearchInput
+        :model-value="modelValue"
+        @update:model-value="(value) => emit('update:modelValue', value)"
+      />
       <Button class="button">+ Add Campaign</Button>
     </div>
   </div>

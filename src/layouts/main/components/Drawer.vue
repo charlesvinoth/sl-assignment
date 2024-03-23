@@ -75,6 +75,7 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
   left: 0;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 10;
   border-right: 1px solid #e1e2ef;
   background-color: white;
   padding: 10px 4px 10px 0;

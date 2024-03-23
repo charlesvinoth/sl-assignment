@@ -1,4 +1,16 @@
-<script setup></script>
+<script setup>
+import Checkbox from '@/components/Checkbox.vue'
+import CampaignActions from './components/CampaignActions.vue'
+import CampaignDetails from './components/CampaignDetails.vue'
+import CampaignReportItem from './components/CampaignReportItem.vue'
+
+defineProps({
+  campaigns: {
+    type: Array,
+    required: true
+  }
+})
+</script>
 
 <template>
   <div class="campaigns">
@@ -6,24 +18,65 @@
       <thead>
         <tr>
           <th style="width: 32px">
-            <input id="" type="checkbox" name="" />
+            <Checkbox />
           </th>
           <th>Campaign Details</th>
-          <th>Report</th>
-          <th />
-          <th />
-          <th />
-          <th />
-          <th />
+          <th colspan="5">Report</th>
+          <th style="width: 148px" />
         </tr>
       </thead>
 
       <tbody>
-        <tr v-for="n in 5" :key="n">
+        <tr v-for="campaign in campaigns" :key="campaign.id">
           <td>
-            <input id="" type="checkbox" name="" />
+            <Checkbox />
           </td>
-          <td v-for="m in 7" :key="m" />
+          <td>
+            <CampaignDetails
+              :name="campaign.name"
+              :status="campaign.status"
+              :updated-on="campaign.updatedOn"
+              :sequences="campaign.sequences"
+            />
+          </td>
+          <td>
+            <CampaignReportItem :status="campaign.status" :stat="campaign.sent" stat-label="Sent" />
+          </td>
+          <td>
+            <CampaignReportItem
+              :status="campaign.status"
+              :stat="campaign.clicked[0]"
+              :stat-percentage="campaign.clicked[1]"
+              stat-label="Clicked"
+            />
+          </td>
+          <td>
+            <CampaignReportItem
+              :status="campaign.status"
+              :stat="campaign.opened[0]"
+              :stat-percentage="campaign.opened[1]"
+              stat-label="Opened"
+            />
+          </td>
+          <td>
+            <CampaignReportItem
+              :status="campaign.status"
+              :stat="campaign.replied[0]"
+              :stat-percentage="campaign.replied[1]"
+              stat-label="Replied"
+            />
+          </td>
+          <td>
+            <CampaignReportItem
+              :status="campaign.status"
+              :stat="campaign.positiveReply[0]"
+              :stat-percentage="campaign.positiveReply[1]"
+              stat-label="Positive Reply"
+            />
+          </td>
+          <td>
+            <CampaignActions />
+          </td>
         </tr>
       </tbody>
     </table>
@@ -37,7 +90,6 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    table-layout: fixed;
 
     tr {
       border-bottom: 3px solid #f7f8fe;
@@ -47,17 +99,19 @@
       background-color: #e9ebf9;
 
       th {
+        margin: 0;
         padding: 15px 8px;
         color: var(--gray-3);
         font-weight: 700;
         line-height: 20px;
+        text-align: left;
       }
     }
 
     tbody {
       td {
         background-color: white;
-        padding: 36px 8px;
+        padding: 18.5px 8px;
       }
     }
   }

@@ -1,9 +1,23 @@
-<script setup></script>
+<script setup>
+defineProps({
+  modelValue: {
+    type: String,
+    required: true
+  }
+})
+
+const emit = defineEmits(['update:modelValue'])
+</script>
 
 <template>
   <div class="search-input">
     <img src="@/assets/icons/search.svg" alt="search icon" />
-    <input type="text" placeholder="Search Campaigns" />
+    <input
+      :value="modelValue"
+      type="text"
+      placeholder="Search Campaigns"
+      @input="emit('update:modelValue', $event.target.value)"
+    />
   </div>
 </template>
 

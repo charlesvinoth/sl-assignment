@@ -81,6 +81,7 @@ const logout = () => router.push({ name: 'login' })
     position: absolute;
     top: 32px;
     right: 0;
+    z-index: 20;
     box-shadow: 0px 2px 4px 0px rgba(141, 143, 169, 0.25);
     border-radius: 3px;
     background-color: white;
