@@ -1,7 +1,31 @@
-<script setup></script>
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  modelValue: {
+    type: [Array, Boolean],
+    required: true
+  },
+  value: {
+    type: [String, null],
+    default: null
+  }
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+const model = computed({
+  get() {
+    return props.modelValue
+  },
+  set(value) {
+    emit('update:modelValue', value)
+  }
+})
+</script>
 
 <template>
-  <input type="checkbox" />
+  <input v-model="model" type="checkbox" :value="value" />
 </template>
 
 <style lang="scss" scoped>

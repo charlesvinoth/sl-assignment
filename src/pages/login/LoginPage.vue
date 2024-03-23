@@ -11,12 +11,13 @@ const store = useStore()
 const router = useRouter()
 
 const state = reactive({
-  email: 'charles.vinoth@example.com',
-  password: 'smart@123'
+  email: '',
+  password: ''
 })
 
 const isButtonDisabled = computed(() => !state.email || !state.password)
 const isAuthenticated = computed(() => store.getters.isAuthenticated)
+const error = computed(() => store.state.auth.error)
 
 watch(isAuthenticated, () => {
   if (isAuthenticated.value) {
@@ -44,6 +45,7 @@ function handleSubmit(e) {
         <InputText v-model="state.email" label="Email" />
         <InputPassword v-model="state.password" label="Password" class="field" />
         <Button :is-disabled="isButtonDisabled">Sign In</Button>
+        <p v-if="error" class="error">{{ error }}</p>
       </form>
     </div>
   </main>
@@ -83,6 +85,13 @@ function handleSubmit(e) {
     .field {
       margin-top: 16px;
       margin-bottom: 24px;
+    }
+
+    .error {
+      margin: 16px 0 0;
+      color: var(--negative);
+      font-size: 14px;
+      text-align: center;
     }
   }
 }
