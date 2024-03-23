@@ -55,3 +55,18 @@ input {
   color: var(--gray-1);
   font-size: 15px;
 }
+
+.vex.vex-theme-plain {
+  .vex-content {
+    border-radius: 3px;
+  }
+
+  .vex-dialog-message {
+    color: inherit;
+  }
+
+  .vex-dialog-button.vex-dialog-button-primary {
+    border-radius: 3px;
+    background: var(--primary-2) !important;
+  }
+}

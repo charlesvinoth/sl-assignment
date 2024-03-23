@@ -1,16 +1,26 @@
-<script setup></script>
+<script setup>
+import vex from '@/plugins/vex'
+
+const showPrompt = (action) => {
+  vex.dialog.alert({
+    message: `${action} the campaign?`
+  })
+}
+</script>
 
 <template>
   <div class="campaign-actions">
-    <div class="action">
+    <button class="action" @click="showPrompt('Pause')">
       <img src="@/assets/icons/paused.svg" alt="pause icon" />
-    </div>
-    <div class="action">
+    </button>
+
+    <button class="action" @click="showPrompt('Edit')">
       <img src="@/assets/icons/edit.svg" alt="edit icon" />
-    </div>
-    <div class="action">
+    </button>
+
+    <button class="action" @click="showPrompt('More actions on')">
       <img src="@/assets/icons/more.svg" alt="more icon" />
-    </div>
+    </button>
   </div>
 </template>
 
@@ -25,6 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
     border: 1px solid #e5e7f9;
     border-radius: 3px;
     background-color: #fafaff;

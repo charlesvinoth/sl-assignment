@@ -1,5 +1,6 @@
 <script setup>
 import Button from '@/components/Button.vue'
+import vex from '@/plugins/vex'
 import SearchInput from './SearchInput.vue'
 
 defineProps({
@@ -10,6 +11,12 @@ defineProps({
 })
 
 const emit = defineEmits(['update:modelValue'])
+
+const showPrompt = () => {
+  vex.dialog.alert({
+    message: 'Add campaign?'
+  })
+}
 </script>
 
 <template>
@@ -21,7 +28,7 @@ const emit = defineEmits(['update:modelValue'])
         :model-value="modelValue"
         @update:model-value="(value) => emit('update:modelValue', value)"
       />
-      <Button class="button">+ Add Campaign</Button>
+      <Button class="button" @click="showPrompt">+ Add Campaign</Button>
     </div>
   </div>
 </template>

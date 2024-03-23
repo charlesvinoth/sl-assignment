@@ -11,6 +11,8 @@
   "dependencies": {
     "@vueuse/core": "^10.9.0",
     "core-js": "^3.36.1",
+    "vex-dialog": "^1.1.0",
+    "vex-js": "^4.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuex": "^4.1.0"
