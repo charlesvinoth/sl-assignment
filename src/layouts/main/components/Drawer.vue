@@ -1,8 +1,8 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import AllLeadsIcon from './AllLeadsIcon.vue'
-import EmailCampaignIcon from './EmailCampaignIcon.vue'
-import MasterInboxIcon from './MasterInboxIcon.vue'
+import AllLeadsIcon from './icons/AllLeadsIcon.vue'
+import EmailCampaignIcon from './icons/EmailCampaignIcon.vue'
+import MasterInboxIcon from './icons/MasterInboxIcon.vue'
 
 const routes = [
   {
@@ -76,9 +76,9 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  border-right: 1px solid #e1e2ef;
+  border-right: 1px solid $gray-3;
   background-color: white;
-  padding: 10px 4px 10px 0;
+  padding: 10px 3px 10px 0;
   width: 230px;
   height: calc(100vh - 50px);
 
@@ -102,7 +102,7 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
         justify-content: center;
         align-items: center;
         border-radius: 3px;
-        background-color: #e1e3ef;
+        background-color: $gray-3;
         width: 20px;
         height: 20px;
 
@@ -115,20 +115,20 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
 
       &.active {
         position: relative;
-        background-color: rgba(117, 122, 233, 0.1);
+        background-color: rgba($color: $primary-1, $alpha: 0.1);
 
         &::before {
           position: absolute;
           top: 0;
           left: 0;
-          background-color: var(--primary-1);
+          background-color: $primary-1;
           width: 3px;
           height: 100%;
           content: '';
         }
 
         .icon-wrapper {
-          background-color: var(--primary-1);
+          background-color: $primary-1;
 
           .icon {
             color: white;
@@ -146,7 +146,7 @@ const openLink = () => window.open('https://www.smartlead.ai/', '_blank')
       top: -24px;
       left: calc(50% - 25px);
       border: none;
-      background-color: #e1e3ef;
+      background-color: $gray-3;
       padding: 0;
       width: 50px;
       height: 2px;

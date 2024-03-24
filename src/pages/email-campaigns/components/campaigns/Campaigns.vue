@@ -121,7 +121,7 @@ const selectAll = (value) =>
     width: 100%;
 
     tr {
-      border-bottom: 3px solid #f7f8fe;
+      border-bottom: 3px solid $gray-6;
     }
 
     thead {
@@ -130,7 +130,7 @@ const selectAll = (value) =>
       th {
         margin: 0;
         padding: 15px 8px;
-        color: var(--gray-3);
+        color: #686b8a;
         font-weight: 700;
         line-height: 20px;
         text-align: left;

@@ -1,20 +1,10 @@
 <script setup>
 import { computed } from 'vue'
-import getStatusColor from '../utils/getStatusColor'
 
 const props = defineProps({
   status: {
     type: String,
     default: ''
-  }
-})
-
-const style = computed(() => {
-  const bgColor = getStatusColor(props.status)
-  const _bgColor = bgColor ? `var(--${bgColor})` : '#e5e8f7'
-
-  return {
-    background: `conic-gradient(${_bgColor} 90deg, #e5e8f7 0deg)`
   }
 })
 
@@ -33,7 +23,7 @@ const getStatusIcon = computed(() => {
 </script>
 
 <template>
-  <div class="circle outer" :style="style">
+  <div class="circle outer" :class="status.toLowerCase()">
     <div class="circle inner">
       <img v-if="status !== 'Sent'" :src="getStatusIcon" :alt="status" />
       <span v-else>30%</span>
@@ -50,8 +40,25 @@ const getStatusIcon = computed(() => {
 }
 
 .outer {
+  background: conic-gradient(#e5e8f7, #e5e8f7);
   width: 46px;
   height: 46px;
+
+  &.sent {
+    background: conic-gradient($positive-1 90deg, #e5e8f7 0deg);
+  }
+
+  &.drafted {
+    background: conic-gradient(#e5e8f7, #e5e8f7);
+  }
+
+  &.paused {
+    background: conic-gradient($warning-1 90deg, #e5e8f7 0deg);
+  }
+
+  &.stopped {
+    background: conic-gradient($negative-1 90deg, #e5e8f7 0deg);
+  }
 }
 
 .inner {

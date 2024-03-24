@@ -43,7 +43,7 @@ const authModule = {
           throw new Error('Please provide both email and password')
         }
 
-        const user = state.users.find((_user) => _user.email === email)
+        const user = state.users.find((_user) => _user.email === email.toLowerCase())
 
         if (!user) {
           throw new Error('Email not found')

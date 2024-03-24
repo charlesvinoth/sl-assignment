@@ -1,5 +1,5 @@
 <script setup>
-import PageHeader from '@/components/PageHeader.vue'
+import Toolbar from '@/components/Toolbar.vue'
 import Drawer from './components/Drawer.vue'
 import License from './components/License.vue'
 import User from './components/User.vue'
@@ -7,7 +7,7 @@ import User from './components/User.vue'
 
 <template>
   <div class="main-layout">
-    <PageHeader is-dense class="page-header">
+    <Toolbar is-dense class="toolbar">
       <div class="toolbar-items">
         <License />
 
@@ -16,11 +16,11 @@ import User from './components/User.vue'
 
         <User />
       </div>
-    </PageHeader>
+    </Toolbar>
 
     <Drawer />
 
-    <main class="page-content">
+    <main class="content">
       <slot />
     </main>
   </div>
@@ -28,8 +28,9 @@ import User from './components/User.vue'
 
 <style lang="scss" scoped>
 .main-layout {
-  .page-header {
+  .toolbar {
     position: fixed;
+    z-index: 10;
     inset: 0;
 
     .toolbar-items {
@@ -39,7 +40,7 @@ import User from './components/User.vue'
     }
   }
 
-  .page-content {
+  .content {
     margin-top: 50px;
     margin-left: 230px;
   }

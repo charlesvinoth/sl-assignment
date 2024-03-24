@@ -1,8 +1,5 @@
 <script setup>
-import { computed } from 'vue'
-import getStatusColor from '../utils/getStatusColor'
-
-const props = defineProps({
+defineProps({
   status: {
     type: String,
     required: true
@@ -16,19 +13,11 @@ const props = defineProps({
     required: true
   }
 })
-
-const style = computed(() => {
-  const bgColor = getStatusColor(props.status)
-
-  return {
-    backgroundColor: bgColor ? `var(--${bgColor})` : '#B7BBD4'
-  }
-})
 </script>
 
 <template>
   <p class="campaign-description">
-    <span class="dot" :style="style" />
+    <span class="dot" :class="status.toLowerCase()" />
     <span>{{ status }} on {{ updatedOn }}</span>
     <span class="divider" />
     <span>{{ sequences }} Sequences</span>
@@ -41,13 +30,29 @@ const style = computed(() => {
   align-items: center;
   gap: 8px;
   margin: 0;
-  color: rgba(40, 43, 66, 0.6);
+  color: rgba($color: $gray-2, $alpha: 0.6);
   font-size: 14px;
 
   .dot {
     border-radius: 100%;
     width: 6px;
     height: 6px;
+
+    &.sent {
+      background: $positive-1;
+    }
+
+    &.drafted {
+      background: #b7bbd4;
+    }
+
+    &.paused {
+      background: $warning-1;
+    }
+
+    &.stopped {
+      background: $negative-1;
+    }
   }
 
   .divider {

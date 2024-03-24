@@ -21,7 +21,7 @@ defineProps({
   gap: 12px;
   margin: 0;
   margin-bottom: 8px;
-  color: var(--primary-2);
+  color: $primary-2;
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;

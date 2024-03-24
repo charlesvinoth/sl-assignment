@@ -30,11 +30,11 @@ defineProps({
   flex-direction: column;
   justify-content: center;
   margin: 20vh auto 0;
-  width: 460px;
+  width: 453px;
 
   h1 {
     margin: 0 0 8px;
-    color: var(--gray-1);
+    color: $gray-1;
     font-weight: 700;
     font-size: 15px;
     line-height: 20px;
@@ -43,20 +43,21 @@ defineProps({
 
   p {
     margin: 0;
-    color: rgba(0, 1, 21, 0.8);
+    color: rgba($color: $gray-1, $alpha: 0.8);
     font-size: 14px;
-    line-height: 24px;
+    line-height: 25px;
     text-align: center;
   }
 
   img {
-    margin: 44px 0;
+    margin: 44px auto;
+    width: 412px;
   }
 
   .button {
     margin: auto;
-    background-color: var(--primary-1);
-    width: 196px;
+    background-color: $primary-1;
+    width: 193px;
   }
 }
 </style>

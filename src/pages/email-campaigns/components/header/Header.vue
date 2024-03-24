@@ -14,7 +14,7 @@ const emit = defineEmits(['update:modelValue'])
 
 const showPrompt = () => {
   vex.dialog.alert({
-    message: 'Add campaign?'
+    message: 'Add campaign'
   })
 }
 </script>
@@ -39,7 +39,7 @@ const showPrompt = () => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  border-bottom: 1px solid #e1e2ef;
+  border-bottom: 1px solid $gray-3;
   background-color: white;
   padding: 0 16px;
   height: 60px;
@@ -52,9 +52,9 @@ const showPrompt = () => {
       position: absolute;
       bottom: -20px;
       left: calc(50% - 20px);
-      border-radius: 12px 12px 0 0;
-      background-color: var(--primary-1);
-      width: 40px;
+      border-radius: 36px 36px 0 0;
+      background-color: $primary-1;
+      width: 39px;
       height: 4px;
       content: '';
     }

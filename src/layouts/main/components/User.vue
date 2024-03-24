@@ -23,23 +23,21 @@ const logout = () => router.push({ name: 'login' })
     <img
       src="@/assets/avatar.jpeg"
       alt="avatar"
-      class="avatar"
+      class="user-avatar"
       @mouseenter="showDropDown"
       @click="showDropDown"
     />
 
     <Transition>
       <div v-show="isDropdownVisible" ref="dropdownRef" class="dropdown">
-        <div class="header">
+        <div class="user-profile">
           <img src="@/assets/avatar.jpeg" alt="avatar" class="avatar-large" />
 
-          <div class="profile">
+          <div class="user-details">
             <p class="name">{{ name }}</p>
             <p class="email">{{ email }}</p>
           </div>
         </div>
-
-        <hr class="divider" />
 
         <nav class="menu">
           <ul>
@@ -61,7 +59,7 @@ const logout = () => router.push({ name: 'login' })
   justify-content: center;
   align-items: center;
 
-  .avatar {
+  .user-avatar {
     border-radius: 100%;
     width: 24px;
     height: 24px;
@@ -82,16 +80,17 @@ const logout = () => router.push({ name: 'login' })
     top: 32px;
     right: 0;
     z-index: 20;
-    box-shadow: 0px 2px 4px 0px rgba(141, 143, 169, 0.25);
+    box-shadow: 0px 2px 4px 0px rgba($color: $box-shadow, $alpha: 0.25);
     border-radius: 3px;
     background-color: white;
     width: 342px;
 
-    .header {
+    .user-profile {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 16px;
+      border-bottom: 1px solid #f1f2f8;
       padding: 16px;
 
       .avatar-large {
@@ -100,7 +99,7 @@ const logout = () => router.push({ name: 'login' })
         height: 45px;
       }
 
-      .profile {
+      .user-details {
         flex-grow: 1;
 
         p {
@@ -108,24 +107,17 @@ const logout = () => router.push({ name: 'login' })
         }
 
         .name {
-          margin-bottom: 3px;
-          color: var(--gray-1);
+          margin-bottom: 4px;
+          color: rgba($color: $gray-1, $alpha: 0.8);
           font-weight: 500;
         }
 
         .email {
-          color: rgba(0, 1, 21, 0.6);
+          color: rgba($color: $gray-1, $alpha: 0.6);
           font-size: 14px;
+          text-transform: lowercase;
         }
       }
-    }
-
-    .divider {
-      margin: 0;
-      border: none;
-      background-color: #f1f2f8;
-      padding: 0;
-      height: 1px;
     }
 
     .menu {

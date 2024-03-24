@@ -1,33 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-:root {
-  --primary-1: #757ae9;
-  --primary-2: #6e58f1;
-
-  --gray-1: #000115;
-  --gray-2: #7a7d9c;
-  --gray-3: #686b8a;
-
-  --border: #c6c7db;
-
-  --positive: #5eca39;
-  --negative: #cb4b4b;
-  --warning: #dd9553;
-  --warning-2: #eeb728;
-  --purple: #bf51c1;
-  --cyan: #51c1c1;
-
-  --gray-4: #e5e8f7;
-}
-
 body {
   font-family: 'DM Sans', sans-serif;
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  background-color: #f7f8fe;
-  color: #282b42;
+  background-color: $gray-6;
+  color: $gray-2;
 }
 
 * {
@@ -52,7 +32,7 @@ input {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  color: var(--gray-1);
+  color: $gray-1;
   font-size: 15px;
 }
 
@@ -67,6 +47,6 @@ input {
 
   .vex-dialog-button.vex-dialog-button-primary {
     border-radius: 3px;
-    background: var(--primary-2) !important;
+    background: $primary-2 !important;
   }
 }

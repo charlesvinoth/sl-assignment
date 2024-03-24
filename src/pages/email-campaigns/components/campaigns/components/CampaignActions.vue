@@ -3,7 +3,7 @@ import vex from '@/plugins/vex'
 
 const showPrompt = (action) => {
   vex.dialog.alert({
-    message: `${action} the campaign?`
+    message: `${action} campaign?`
   })
 }
 </script>
@@ -36,9 +36,9 @@ const showPrompt = (action) => {
     justify-content: center;
     align-items: center;
     outline: none;
-    border: 1px solid #e5e7f9;
+    border: 1px solid $gray-4;
     border-radius: 3px;
-    background-color: #fafaff;
+    background-color: $gray-5;
     width: 36px;
     height: 36px;
   }

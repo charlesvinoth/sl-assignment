@@ -40,14 +40,14 @@ const isVisible = ref(false)
 <style lang="scss" scoped>
 .forgot-password {
   margin: 0px;
-  color: var(--primary-1);
+  color: $primary-1;
   font-weight: 500;
   font-size: 14px;
 }
 
 .toggle {
   cursor: pointer;
-  color: var(--gray-3);
+  color: #686b8a;
   font-size: 14px;
   user-select: none;
 }

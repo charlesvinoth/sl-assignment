@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import getStatColor from '../utils/getStatColor'
+// import getStatColor from '../utils/getStatColor'
 
 const props = defineProps({
   status: {
@@ -21,25 +21,29 @@ const props = defineProps({
   }
 })
 
-const style = computed(() => {
+const countClass = computed(() => {
   if (props.status === 'Drafted') {
-    return
+    return 'drafted'
   }
 
-  const color = getStatColor(props.statLabel)
-  return { color: `var(--${color})` }
+  if (props.statLabel === 'Positive Reply') {
+    return 'positive'
+  }
+
+  return props.statLabel.toLowerCase()
 })
 
 const showWarningIcon = computed(
-  () => !props.stat && props.statLabel !== 'Sent' && props.statLabel !== 'Positive Reply'
+  () =>
+    props.status === 'Drafted' && props.statLabel !== 'Sent' && props.statLabel !== 'Positive Reply'
 )
 const showInfoIcon = computed(() => props.statLabel === 'Positive Reply')
 </script>
 
 <template>
   <div class="campaign-report-item">
-    <div class="stat" :style="style">
-      {{ stat }}
+    <div class="stat">
+      <span class="count" :class="countClass">{{ stat }}</span>
 
       <span v-if="props.statLabel !== 'Sent'" class="percentage">
         {{ statPercentage || '0.0' }}%
@@ -59,15 +63,43 @@ const showInfoIcon = computed(() => props.statLabel === 'Positive Reply')
 
 <style lang="scss" scoped>
 .campaign-report-item {
+  color: rgba($color: $gray-2, $alpha: 0.6);
+
   .stat {
     margin-bottom: 8px;
     height: 26px;
-    color: rgba(40, 43, 66, 0.6);
-    font-weight: 500;
     font-size: 20px;
 
+    .count {
+      margin-right: 4px;
+      font-weight: 500;
+
+      &.drafted {
+        color: #999ba8;
+      }
+
+      &.sent {
+        color: $primary-2;
+      }
+
+      &.clicked {
+        color: $warning-2;
+      }
+
+      &.opened {
+        color: $purple-1;
+      }
+
+      &.replied {
+        color: $cyan-1;
+      }
+
+      &.positive {
+        color: $positive-1;
+      }
+    }
+
     .percentage {
-      color: rgba(40, 43, 66, 0.6);
       font-size: 12px;
     }
   }
@@ -76,7 +108,6 @@ const showInfoIcon = computed(() => props.statLabel === 'Positive Reply')
     display: flex;
     align-items: flex-end;
     gap: 4px;
-    color: rgba(40, 43, 66, 0.6);
     font-size: 14px;
 
     img {

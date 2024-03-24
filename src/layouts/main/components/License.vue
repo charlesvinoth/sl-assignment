@@ -12,9 +12,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border-radius: 30px;
+  border-radius: 46px;
   background-color: rgba($color: white, $alpha: 0.2);
-  padding: 0px 12px;
+  padding: 7px 12px;
   height: 30px;
 
   .icon {
@@ -23,7 +23,7 @@
 
   .label {
     margin: 0;
-    color: white;
+    color: rgba($color: white, $alpha: 0.8);
     font-size: 12px;
   }
 }

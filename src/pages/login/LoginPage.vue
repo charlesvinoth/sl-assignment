@@ -3,7 +3,7 @@ import { computed, onMounted, reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import Button from '@/components/Button.vue'
-import PageHeader from '@/components/PageHeader.vue'
+import Toolbar from '@/components/Toolbar.vue'
 import InputPassword from './components/InputPassword.vue'
 import InputText from './components/InputText.vue'
 
@@ -35,7 +35,7 @@ function handleSubmit(e) {
 
 <template>
   <main>
-    <PageHeader />
+    <Toolbar />
 
     <div class="form-wrapper">
       <h1 class="form-title">Welcome to Smartlead.ai</h1>
@@ -43,9 +43,9 @@ function handleSubmit(e) {
 
       <form class="form" @submit="handleSubmit">
         <InputText v-model="state.email" label="Email" />
-        <InputPassword v-model="state.password" label="Password" class="field" />
+        <InputPassword v-model="state.password" label="Password" class="form-field" />
         <Button :is-disabled="isButtonDisabled">Sign In</Button>
-        <p v-if="error" class="error">{{ error }}</p>
+        <p v-if="error" class="form-error">{{ error }}</p>
       </form>
     </div>
   </main>
@@ -54,12 +54,12 @@ function handleSubmit(e) {
 <style lang="scss" scoped>
 .form-wrapper {
   margin: 64px auto 0px;
-  box-shadow: 0px 2px 4px 0px rgba(141, 143, 169, 0.25);
-  border-radius: 4px;
+  box-shadow: 0px 2px 4px 0px rgba($color: $box-shadow, $alpha: 0.25);
+  border-radius: 3px;
   background-color: white;
   padding: 60px;
   width: 545px;
-  color: var(--gray-1);
+  color: $gray-1;
 
   .form-title,
   .form-subtitle {
@@ -82,14 +82,14 @@ function handleSubmit(e) {
   .form {
     margin-top: 16px;
 
-    .field {
+    .form-field {
       margin-top: 16px;
       margin-bottom: 24px;
     }
 
-    .error {
+    .form-error {
       margin: 16px 0 0;
-      color: var(--negative);
+      color: $negative-1;
       font-size: 14px;
       text-align: center;
     }

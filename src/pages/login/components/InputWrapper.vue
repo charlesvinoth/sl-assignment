@@ -12,14 +12,14 @@
   align-items: center;
   gap: 16px;
   border: 1px solid;
-  border-color: var(--border);
-  border-radius: 4px;
+  border-color: #c6c7db;
+  border-radius: 3px;
   padding: 0px 10px;
   height: 40px;
   overflow: hidden;
 
   &:focus-within {
-    border-color: var(--primary-1);
+    border-color: $primary-1;
   }
 }
 </style>

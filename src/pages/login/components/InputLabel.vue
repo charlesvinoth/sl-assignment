@@ -19,7 +19,7 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--gray-2);
+  color: #7a7d9c;
   font-size: 14px;
   line-height: 24px;
 }

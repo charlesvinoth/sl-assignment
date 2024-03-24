@@ -36,7 +36,7 @@ input[type='checkbox'] {
   -webkit-appearance: none;
   margin: 0;
   border: 1px solid #dadce0;
-  border-radius: 4px;
+  border-radius: 3px;
   background-color: white;
   width: 16px;
   height: 16px;
@@ -49,8 +49,8 @@ input[type='checkbox'] {
   }
 
   &:checked {
-    border-color: var(--primary-1);
-    background-color: var(--primary-1);
+    border-color: $primary-1;
+    background-color: $primary-1;
 
     &::before {
       transform: scale(1);
