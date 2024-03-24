@@ -109,7 +109,7 @@ const selectAll = (value) =>
 
 <style lang="scss" scoped>
 .campaigns {
-  padding: 0px 16px;
+  padding: 0px 16px 24px;
 
   .no-data {
     font-size: 14px;
