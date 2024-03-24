@@ -16,6 +16,12 @@ The project adheres to a well-organized structure for maintainability:
 - **store**: Global state management with Vuex.
 - **styles**: Base styles and component-specific SCSS files.
 
+## Users
+
+- jerome.carlson@example.com/smart@123
+- charles.vinoth@example.com/smart@123
+- dinesh.madanlal@example.com/smart@123
+
 ## Login Page
 
 - Developed the login page according to the provided Figma design.
